@@ -1,0 +1,32 @@
+[
+  {
+    "itemID": 1,
+    "description": "Apple",
+    "quantity": 6,
+    "price": 3
+  },
+  {
+    "itemID": 2,
+    "description": "Bannana",
+    "quantity": 6,
+    "price": 2
+  },
+  {
+    "itemID": 3,
+    "description": "Orange",
+    "quantity": 4,
+    "price": 2.5
+  },
+  {
+    "itemID": 4,
+    "description": "Strawberries",
+    "quantity": 12,
+    "price": 6
+  },
+  {
+    "itemID": 5,
+    "description": "Pears",
+    "quantity": 4,
+    "price": 3
+  }
+]
