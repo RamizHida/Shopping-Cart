@@ -34,6 +34,15 @@ function ShoppingCart({ cart, setCart }) {
     return <h1>No items selected </h1>;
   }
 
+  if (cart.reduce((acc, item) => acc + item.price, 0) > 20000) {
+    return (
+      <h1>
+        That is enough shopping for now, this app will automatically reload
+        {setTimeout(() => location.replace('/'), 1000)}
+      </h1>
+    );
+  }
+
   return (
     <>
       <h2>Current items in cart</h2>
@@ -41,8 +50,8 @@ function ShoppingCart({ cart, setCart }) {
         {
           // Prevent display of duplicate items
           removeDuplicates(cart).map((item) => (
-            <li key={item.itemID}>
-              {item.description} : x{countOccurences(item, cart)}
+            <li key={item.id}>
+              {item.title.slice(0, 20) + '...'} : x{countOccurences(item, cart)}
               <button
                 onClick={() => {
                   setCart((prevCart) =>
@@ -57,7 +66,10 @@ function ShoppingCart({ cart, setCart }) {
         }
       </ul>
       <h1>Total numbers of items: {cart.length}</h1>
-      <h1>Total Cost: {cart.reduce((acc, item) => acc + item.price, 0)} </h1>
+      <h1>
+        Total Cost:
+        {cart.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
+      </h1>
       <br />
       <br />
       <div>
@@ -65,7 +77,6 @@ function ShoppingCart({ cart, setCart }) {
           type="button"
           className="button"
           onClick={() => {
-            if (cart.length === 0) return alert('No products to remove');
             setWarning((o) => !o);
           }}
         >
