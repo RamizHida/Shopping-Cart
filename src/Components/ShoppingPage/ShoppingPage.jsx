@@ -1,13 +1,26 @@
 /* eslint-disable react/prop-types */
+import { useState } from 'react';
 import items from '../../items';
 import ItemCard from '../ItemCard/ItemCard';
 import styles from './ShoppingPage.module.css';
-function ShoppingPage({ cart, setCart }) {
-  console.log(cart);
+import { Link } from 'react-router-dom';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
+
+function ShoppingPage() {
+  const [cart, setCart] = useState([]);
 
   return (
     <>
-      <h1>Choose from these items</h1>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <h1>Shopping Page!</h1>
       <div className={styles.items__container}>
         {items.map((item) => {
           return (
@@ -23,6 +36,7 @@ function ShoppingPage({ cart, setCart }) {
           );
         })}
       </div>
+      <ShoppingCart cart={cart} setCart={setCart} />
     </>
   );
 }

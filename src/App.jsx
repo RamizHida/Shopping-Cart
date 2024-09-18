@@ -1,14 +1,18 @@
-import ShoppingPage from './Components/ShoppingPage/ShoppingPage';
-import ShoppingCart from './Components/ShoppingCart/ShoppingCart';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function App() {
-  const [cart, setCart] = useState([]);
-
   return (
     <>
-      <ShoppingPage cart={cart} setCart={setCart} />
-      <ShoppingCart cart={cart} setCart={setCart} />
+      <div>
+        <h1>Home Page</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="shopping-page">Shopping Page</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </>
   );
 }

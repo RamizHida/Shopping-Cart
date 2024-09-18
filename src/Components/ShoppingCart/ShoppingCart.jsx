@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-// import Warper from './Warper';
 
 function removeDuplicates(arr) {
   const unqiueArr = [];
@@ -13,6 +11,10 @@ function removeDuplicates(arr) {
     } else continue;
   }
   return unqiueArr;
+}
+
+function emptyCart(cart) {
+  if (cart.length === 0) return true;
 }
 
 function countOccurences(item, arr) {
@@ -28,7 +30,10 @@ function ShoppingCart({ cart, setCart }) {
   const [warning, setWarning] = useState(false);
   const closeModal = () => setWarning(false);
 
-  console.log(cart, 'from shopping cart');
+  if (emptyCart(cart)) {
+    return <h1>No items selected </h1>;
+  }
+
   return (
     <>
       <h2>Current items in cart</h2>
@@ -55,21 +60,14 @@ function ShoppingCart({ cart, setCart }) {
       <h1>Total Cost: {cart.reduce((acc, item) => acc + item.price, 0)} </h1>
       <br />
       <br />
-      {/* <button
-        onClick={() =>
-          setWarning((o) => {
-            !o;
-          })
-        }
-      >
-        Clear Entire Cart {console.log(warning)}
-        {warning ?? <Modal warning={warning} />}
-      </button> */}
       <div>
         <button
           type="button"
           className="button"
-          onClick={() => setWarning((o) => !o)}
+          onClick={() => {
+            if (cart.length === 0) return alert('No products to remove');
+            setWarning((o) => !o);
+          }}
         >
           Clear Entire Cart
         </button>
