@@ -6,9 +6,15 @@ const ItemCard = ({ title, description, price, imgUrl, addToCart }) => {
     <>
       <div className={styles.outer__container}>
         <div className={styles.container}>
-          <h2>Title: {title}</h2>
-          <p>Description: {description}</p>
-          <p>Price: {price}$</p>
+          <h2>
+            <span>Title:</span> {title}
+          </h2>
+          <p>
+            <span>Description:</span> {description}
+          </p>
+          <p>
+            <span>Price:</span> {price}$
+          </p>
           <img src={imgUrl} className={styles.item__image} />
           <button onClick={addToCart} className={styles.add_button}>
             Add to Cart

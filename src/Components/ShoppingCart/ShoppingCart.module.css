@@ -1,0 +1,120 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 20px;
+  border: 1px solid red;
+}
+
+img {
+  width: 100px;
+  height: 200px;
+}
+
+.delete__button {
+  margin: 1rem;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #000;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  background-image: linear-gradient(144deg, #df1010, #d63838 50%, #c2600f);
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border: none;
+}
+
+.delete__button:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  transform: scale(1.1);
+}
+
+.clear__button {
+  display: flex;
+  margin: 2rem auto;
+  padding: 10px;
+  font-size: 25px;
+  background-color: #000;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  background-image: linear-gradient(144deg, #df1010, #d63838 50%, #c2600f);
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border: none;
+}
+
+.clear__button:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  transform: scale(1.1);
+}
+
+.popupp button {
+  color: red;
+}
+.warning {
+  text-align: center;
+}
+
+.delete__cart__no {
+  margin: 2rem auto;
+  padding: 10px;
+  font-size: 25px;
+  background-color: #000;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  background-image: linear-gradient(144deg, #13a933, #4ae00f 50%, #37db1e);
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border: none;
+}
+
+.delete__cart__no {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  transform: scale(1.1);
+}
+
+.delete__cart__yes {
+  margin: 2rem auto;
+  padding: 10px;
+  font-size: 25px;
+  background-color: #000;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  background-image: linear-gradient(144deg, #b46161, #7c061d 50%, #d40c0c);
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border: none;
+}
+
+.delete__cart__yes {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  transform: scale(1.1);
+}
+
+.d {
+  display: flex;
+  width: 200px;
+  padding: 20px;
+  margin: auto;
+}
+
+.empty {
+  text-align: center;
+  color: #000;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 705px) {
+  .cart {
+    width: 430px;
+  }
+}

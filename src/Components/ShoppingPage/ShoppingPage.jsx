@@ -15,7 +15,7 @@ function ShoppingPage() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/electronics?limit=7')
+    fetch('https://fakestoreapi.com/products/category/electronics?limit=6')
       .then((res) => res.json())
       .then((res) => {
         console.log([...res]);
@@ -31,19 +31,19 @@ function ShoppingPage() {
     <>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
+          <li>
+            <Link to="/" className="link">
+              Home
+            </Link>
+          </li>
         </nav>
       </div>
-      <h1>Shopping Page!</h1>
+      {/* <h1>Welcome!</h1> */}
       <div className={styles.items__container}>
         {items.map((item) => {
           return (
             <ItemCard
-              title={item.title}
+              title={truncate(item.title, 35)}
               description={truncate(item.description, 70)}
               price={item.price}
               key={item.id}

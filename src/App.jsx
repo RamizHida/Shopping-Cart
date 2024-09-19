@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom';
+import './HomePage.styles.css';
 
 function App() {
   return (
     <>
-      <div>
-        <h1>Home Page</h1>
+      <div className="main">
         <nav>
-          <ul>
-            <li>
-              <Link to="shopping-page">Shopping Page</Link>
-            </li>
-          </ul>
+          <li>
+            <Link to="shopping-page" className="link">
+              Go Shopping
+            </Link>
+          </li>
         </nav>
+      </div>
+      <div>
+        <p className="pitch">Where Shopping Is Joy</p>
       </div>
     </>
   );
